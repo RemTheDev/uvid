@@ -24,7 +24,7 @@ export class WebRTCConnectionService {
 
 constructor(private webRTCClientsService: WebRTCClientService,
             private mediaStreamService: MediaStreamService) {
-  this.socket = socketIO.connect(environment.ServiceLink);
+  this.socket = socketIO.connect('https://uvid-rehuo10.herokuapp.com/');
   this.socket.on('connect', () => {
     this.userId = this.socket.id;
     console.log('Socket', this.socket.id, 'connected.');
