@@ -213,8 +213,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
 
 
 
@@ -228,9 +228,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RoomConnectionComponent_button_5_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.connect(); });
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.connect(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Connect");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -238,37 +238,44 @@ function RoomConnectionComponent_button_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r0.userName === "");
 } }
 function RoomConnectionComponent_button_6_Template(rf, ctx) { if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_button_6_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.disconnect(); });
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_button_6_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r7.disconnect(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Disconnect");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function RoomConnectionComponent_mat_card_10_button_5_Template(rf, ctx) { if (rf & 1) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_mat_card_10_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r9.copyLink(); });
+function RoomConnectionComponent_mat_card_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "You were connected to a new room since the requested room was full.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function RoomConnectionComponent_mat_card_8_button_5_Template(rf, ctx) { if (rf & 1) {
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConnectionComponent_mat_card_8_button_5_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r10.copyLink(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Copy to clipboard");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function RoomConnectionComponent_mat_card_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 5);
+function RoomConnectionComponent_mat_card_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Room invitation link :");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, RoomConnectionComponent_mat_card_10_button_5_Template, 2, 0, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, RoomConnectionComponent_mat_card_8_button_5_Template, 2, 0, "button", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2.currentURL + ctx_r2.roomId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r3.currentURL + ctx_r3.roomId);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r2.roomId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r3.roomId);
 } }
-function RoomConnectionComponent_div_12_Template(rf, ctx) { if (rf & 1) {
+function RoomConnectionComponent_div_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -276,13 +283,13 @@ function RoomConnectionComponent_div_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "video", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const user_r11 = ctx.$implicit;
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const user_r12 = ctx.$implicit;
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](user_r11.userName);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](user_r12.userName);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("id", user_r11.id);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r3.setStreamSrc(user_r11), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("id", user_r12.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r4.setStreamSrc(user_r12), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
 class RoomConnectionComponent {
     constructor(route, router, webRTCConnectionService, webRTCClientService, domSanitizer) {
@@ -339,7 +346,7 @@ class RoomConnectionComponent {
         this.webRTCConnectionService.disconnect();
         this.isConnected = false;
         this.webRTCClientService.setRoomId(undefined, false);
-        this.router.navigate(['/room-connection']);
+        location.reload();
     }
     setStreamSrc(user) {
         const video = document.getElementById(user.id);
@@ -348,7 +355,7 @@ class RoomConnectionComponent {
     }
 }
 RoomConnectionComponent.ɵfac = function RoomConnectionComponent_Factory(t) { return new (t || RoomConnectionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_webrtc_client_connection_service__WEBPACK_IMPORTED_MODULE_2__["WebRTCConnectionService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_webrtc_clients_service__WEBPACK_IMPORTED_MODULE_3__["WebRTCClientService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"])); };
-RoomConnectionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RoomConnectionComponent, selectors: [["app-room-connection"]], decls: 13, vars: 5, consts: [[1, "mainContainer"], [1, "txtUserName"], ["matInput", "", "placeholder", "your name", 3, "ngModel", "ngModelChange"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "click", 4, "ngIf"], [1, "roomInvLink"], ["class", "roomInvLink", 4, "ngIf"], [1, "streamsContainer"], ["class", "userContainer", 4, "ngFor", "ngForOf"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click"], ["mat-raised-button", "", "color", "primary", 3, "click"], [1, "roomInvLinkLabel"], [1, "userContainer"], [1, "userName"], ["controls", "", "autoplay", "", 1, "videoScreen", 3, "id", "src"]], template: function RoomConnectionComponent_Template(rf, ctx) { if (rf & 1) {
+RoomConnectionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RoomConnectionComponent, selectors: [["app-room-connection"]], decls: 11, vars: 6, consts: [[1, "mainContainer"], [1, "txtUserName"], ["matInput", "", "placeholder", "your name", 3, "ngModel", "ngModelChange"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "click", 4, "ngIf"], ["class", "roomInvLink", 4, "ngIf"], [1, "streamsContainer"], ["class", "userContainer", 4, "ngFor", "ngForOf"], ["mat-raised-button", "", "color", "primary", 3, "disabled", "click"], ["mat-raised-button", "", "color", "primary", 3, "click"], [1, "roomInvLink"], [1, "roomInvLinkLabel"], [1, "userContainer"], [1, "userName"], ["controls", "", "autoplay", "", 1, "videoScreen", 3, "id", "src"]], template: function RoomConnectionComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-form-field", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-label");
@@ -360,14 +367,10 @@ RoomConnectionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, RoomConnectionComponent_button_5_Template, 2, 1, "button", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, RoomConnectionComponent_button_6_Template, 2, 0, "button", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-card", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "You were connected to a new room since the requested room was full.");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, RoomConnectionComponent_mat_card_10_Template, 6, 2, "mat-card", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, RoomConnectionComponent_div_12_Template, 4, 3, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, RoomConnectionComponent_mat_card_7_Template, 3, 0, "mat-card", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, RoomConnectionComponent_mat_card_8_Template, 6, 2, "mat-card", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, RoomConnectionComponent_div_10_Template, 4, 3, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -377,11 +380,13 @@ RoomConnectionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isConnected);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isConnected);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.roomWasFull);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.roomId);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.usersConnected);
-    } }, directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCard"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"]], styles: [".mainContainer[_ngcontent-%COMP%] {\n  background-color: whitesmoke;\n  height: 100%;\n}\n\n.txtUserName[_ngcontent-%COMP%] {\n  margin: 20px 10px 0 20px;\n}\n\n.roomInvLink[_ngcontent-%COMP%] {\n  padding: 10px;\n  margin: 0 20px 10px 20px;\n  background-color: #ebebeb;\n}\n\n.roomInvLink[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n}\n\n.roomInvLinkLabel[_ngcontent-%COMP%] {\n  font-weight: bold;\n}\n\n.streamsContainer[_ngcontent-%COMP%] {\n  display: inline-flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n\n.userContainer[_ngcontent-%COMP%] {\n  margin: 0 20px 20px 20px;\n}\n\n.videoScreen[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 300px;\n}\n\n.userName[_ngcontent-%COMP%] {\n  font-weight: bold;\n  font-size: 20px;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vRjpcXFByb2pldCBXZWJcXHVWaWQtaDIwMjAtUmVteV9IdW90XFx1dmlkXFx1dmlkL3NyY1xcYXBwXFxjb21wb25lbnRzXFxyb29tLWNvbm5lY3Rpb25cXHJvb20tY29ubmVjdGlvbi5jb21wb25lbnQuc2FzcyIsInNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vcm9vbS1jb25uZWN0aW9uLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNEJBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FEQ0E7RUFDRSx3QkFBQTtBQ0VGOztBREFBO0VBQ0UsYUFBQTtFQUNBLHdCQUFBO0VBQ0EseUJBQUE7QUNHRjs7QUREQTtFQUNFLFNBQUE7QUNJRjs7QURGQTtFQUNFLGlCQUFBO0FDS0Y7O0FESEE7RUFHRSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQ0lGOztBREZBO0VBQ0Usd0JBQUE7QUNLRjs7QURIQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0FDTUY7O0FESkE7RUFDRSxpQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQ09GIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vcm9vbS1jb25uZWN0aW9uLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW5Db250YWluZXJcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ1LCAyNDUsIDI0NSlcclxuICBoZWlnaHQ6IDEwMCVcclxuXHJcbi50eHRVc2VyTmFtZVxyXG4gIG1hcmdpbjogMjBweCAxMHB4IDAgMjBweFxyXG5cclxuLnJvb21JbnZMaW5rXHJcbiAgcGFkZGluZzogMTBweFxyXG4gIG1hcmdpbjogMCAyMHB4IDEwcHggMjBweFxyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMzUsIDIzNSwgMjM1KVxyXG5cclxuLnJvb21JbnZMaW5rIHBcclxuICBtYXJnaW46IDBcclxuXHJcbi5yb29tSW52TGlua0xhYmVsXHJcbiAgZm9udC13ZWlnaHQ6IGJvbGRcclxuXHJcbi5zdHJlYW1zQ29udGFpbmVyXHJcbiAgLy9kaXNwbGF5OiBncmlkXHJcbiAgLy9ncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCAxZnIpXHJcbiAgZGlzcGxheTogaW5saW5lLWZsZXhcclxuICBmbGV4LWRpcmVjdGlvbjogcm93XHJcbiAgZmxleC13cmFwOiB3cmFwXHJcblxyXG4udXNlckNvbnRhaW5lclxyXG4gIG1hcmdpbjogMCAyMHB4IDIwcHggMjBweFxyXG5cclxuLnZpZGVvU2NyZWVuXHJcbiAgd2lkdGg6IDQwMHB4XHJcbiAgaGVpZ2h0OiAzMDBweFxyXG5cclxuLnVzZXJOYW1lXHJcbiAgZm9udC13ZWlnaHQ6IGJvbGRcclxuICBmb250LXNpemU6IDIwcHhcclxuICB0ZXh0LWFsaWduOiBjZW50ZXJcclxuIiwiLm1haW5Db250YWluZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi50eHRVc2VyTmFtZSB7XG4gIG1hcmdpbjogMjBweCAxMHB4IDAgMjBweDtcbn1cblxuLnJvb21JbnZMaW5rIHtcbiAgcGFkZGluZzogMTBweDtcbiAgbWFyZ2luOiAwIDIwcHggMTBweCAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWJlYmViO1xufVxuXG4ucm9vbUludkxpbmsgcCB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnJvb21JbnZMaW5rTGFiZWwge1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuLnN0cmVhbXNDb250YWluZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgZmxleC13cmFwOiB3cmFwO1xufVxuXG4udXNlckNvbnRhaW5lciB7XG4gIG1hcmdpbjogMCAyMHB4IDIwcHggMjBweDtcbn1cblxuLnZpZGVvU2NyZWVuIHtcbiAgd2lkdGg6IDQwMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4udXNlck5hbWUge1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */"] });
+    } }, directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButton"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCard"]], styles: [".mainContainer[_ngcontent-%COMP%] {\n  background-color: whitesmoke;\n  height: 100%;\n}\n\n.txtUserName[_ngcontent-%COMP%] {\n  margin: 20px 10px 0 20px;\n}\n\n.roomInvLink[_ngcontent-%COMP%] {\n  padding: 10px;\n  margin: 0 20px 10px 20px;\n  background-color: #ebebeb;\n}\n\n.roomInvLink[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n}\n\n.roomInvLinkLabel[_ngcontent-%COMP%] {\n  font-weight: bold;\n}\n\n.streamsContainer[_ngcontent-%COMP%] {\n  display: inline-flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n\n.userContainer[_ngcontent-%COMP%] {\n  margin: 0 20px 20px 20px;\n}\n\n.videoScreen[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 300px;\n}\n\n.userName[_ngcontent-%COMP%] {\n  font-weight: bold;\n  font-size: 20px;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vRjpcXFByb2pldCBXZWJcXHVWaWQtaDIwMjAtUmVteV9IdW90XFx1dmlkXFx1dmlkL3NyY1xcYXBwXFxjb21wb25lbnRzXFxyb29tLWNvbm5lY3Rpb25cXHJvb20tY29ubmVjdGlvbi5jb21wb25lbnQuc2FzcyIsInNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vcm9vbS1jb25uZWN0aW9uLmNvbXBvbmVudC5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNEJBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FEQ0E7RUFDRSx3QkFBQTtBQ0VGOztBREFBO0VBQ0UsYUFBQTtFQUNBLHdCQUFBO0VBQ0EseUJBQUE7QUNHRjs7QUREQTtFQUNFLFNBQUE7QUNJRjs7QURGQTtFQUNFLGlCQUFBO0FDS0Y7O0FESEE7RUFHRSxvQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQ0lGOztBREZBO0VBQ0Usd0JBQUE7QUNLRjs7QURIQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0FDTUY7O0FESkE7RUFDRSxpQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQ09GIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yb29tLWNvbm5lY3Rpb24vcm9vbS1jb25uZWN0aW9uLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW5Db250YWluZXJcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ1LCAyNDUsIDI0NSlcclxuICBoZWlnaHQ6IDEwMCVcclxuXHJcbi50eHRVc2VyTmFtZVxyXG4gIG1hcmdpbjogMjBweCAxMHB4IDAgMjBweFxyXG5cclxuLnJvb21JbnZMaW5rXHJcbiAgcGFkZGluZzogMTBweFxyXG4gIG1hcmdpbjogMCAyMHB4IDEwcHggMjBweFxyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyMzUsIDIzNSwgMjM1KVxyXG5cclxuLnJvb21JbnZMaW5rIHBcclxuICBtYXJnaW46IDBcclxuXHJcbi5yb29tSW52TGlua0xhYmVsXHJcbiAgZm9udC13ZWlnaHQ6IGJvbGRcclxuXHJcbi5zdHJlYW1zQ29udGFpbmVyXHJcbiAgLy9kaXNwbGF5OiBncmlkXHJcbiAgLy9ncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCAxZnIpXHJcbiAgZGlzcGxheTogaW5saW5lLWZsZXhcclxuICBmbGV4LWRpcmVjdGlvbjogcm93XHJcbiAgZmxleC13cmFwOiB3cmFwXHJcblxyXG4udXNlckNvbnRhaW5lclxyXG4gIG1hcmdpbjogMCAyMHB4IDIwcHggMjBweFxyXG5cclxuLnZpZGVvU2NyZWVuXHJcbiAgd2lkdGg6IDQwMHB4XHJcbiAgaGVpZ2h0OiAzMDBweFxyXG5cclxuLnVzZXJOYW1lXHJcbiAgZm9udC13ZWlnaHQ6IGJvbGRcclxuICBmb250LXNpemU6IDIwcHhcclxuICB0ZXh0LWFsaWduOiBjZW50ZXJcclxuIiwiLm1haW5Db250YWluZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi50eHRVc2VyTmFtZSB7XG4gIG1hcmdpbjogMjBweCAxMHB4IDAgMjBweDtcbn1cblxuLnJvb21JbnZMaW5rIHtcbiAgcGFkZGluZzogMTBweDtcbiAgbWFyZ2luOiAwIDIwcHggMTBweCAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWJlYmViO1xufVxuXG4ucm9vbUludkxpbmsgcCB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnJvb21JbnZMaW5rTGFiZWwge1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuLnN0cmVhbXNDb250YWluZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgZmxleC13cmFwOiB3cmFwO1xufVxuXG4udXNlckNvbnRhaW5lciB7XG4gIG1hcmdpbjogMCAyMHB4IDIwcHggMjBweDtcbn1cblxuLnZpZGVvU2NyZWVuIHtcbiAgd2lkdGg6IDQwMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4udXNlck5hbWUge1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RoomConnectionComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -487,7 +492,7 @@ class WebRTCConnectionService {
         this.mediaStreamService = mediaStreamService;
         this.userConnections = [];
         this.mediaStream = undefined;
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"]('https://uvid-backend-rehuo10.herokuapp.com/');
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"]('http://localhost:3000/');
         this.socket.on('connect', () => {
             this.userId = this.socket.id;
             console.log('Socket', this.socket.id, 'connected.');
@@ -739,7 +744,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    ServiceLink: 'http://localhost:3000/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

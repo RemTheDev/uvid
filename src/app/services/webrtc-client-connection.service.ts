@@ -3,6 +3,7 @@ import * as socketIO from 'socket.io-client';
 import { WebRTCClientService } from './webrtc-clients.service';
 import { MediaStreamService } from './mediastream.service';
 import { WebRTCClient } from '../models/webrtc-client.model';
+import { environment } from '../../environments/environment';
 import { RTC_INIT,
          RTC_DISCONNECT,
          RTC_USER_CONNECTED,
@@ -13,7 +14,6 @@ import { RTC_INIT,
          RTC_MESSAGE_TYPE_OFFER,
          RTC_MESSAGE_TYPE_ANSWER,
          RTC_USER_DISCONNECTED} from '../webrtc/webrtc-event-messages';
-import { BrowserStack } from 'protractor/built/driverProviders';
 
 @Injectable()
 export class WebRTCConnectionService {
@@ -24,7 +24,7 @@ export class WebRTCConnectionService {
 
 constructor(private webRTCClientsService: WebRTCClientService,
             private mediaStreamService: MediaStreamService) {
-  this.socket = socketIO.connect('https://uvid-backend-rehuo10.herokuapp.com/');
+  this.socket = socketIO.connect(environment.ServiceLink);
   this.socket.on('connect', () => {
     this.userId = this.socket.id;
     console.log('Socket', this.socket.id, 'connected.');

@@ -76,7 +76,7 @@ export class RoomConnectionComponent implements OnInit {
     this.webRTCConnectionService.disconnect();
     this.isConnected = false;
     this.webRTCClientService.setRoomId(undefined, false);
-    this.router.navigate(['/room-connection']);
+    location.reload();
   }
 
   setStreamSrc(user: WebRTCClient): string {
