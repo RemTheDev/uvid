@@ -346,6 +346,7 @@ class RoomConnectionComponent {
         this.webRTCConnectionService.disconnect();
         this.isConnected = false;
         this.webRTCClientService.setRoomId(undefined, false);
+        this.router.navigate(['room-connection', '']);
         location.reload();
     }
     setStreamSrc(user) {
@@ -476,9 +477,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _models_webrtc_client_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/webrtc-client.model */ "./src/app/models/webrtc-client.model.ts");
-/* harmony import */ var _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../webrtc/webrtc-event-messages */ "./src/app/webrtc/webrtc-event-messages.ts");
-/* harmony import */ var _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./webrtc-clients.service */ "./src/app/services/webrtc-clients.service.ts");
-/* harmony import */ var _mediastream_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mediastream.service */ "./src/app/services/mediastream.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../webrtc/webrtc-event-messages */ "./src/app/webrtc/webrtc-event-messages.ts");
+/* harmony import */ var _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./webrtc-clients.service */ "./src/app/services/webrtc-clients.service.ts");
+/* harmony import */ var _mediastream_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mediastream.service */ "./src/app/services/mediastream.service.ts");
+
 
 
 
@@ -492,7 +495,7 @@ class WebRTCConnectionService {
         this.mediaStreamService = mediaStreamService;
         this.userConnections = [];
         this.mediaStream = undefined;
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"]('http://localhost:3000/');
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"](_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].ServiceLink);
         this.socket.on('connect', () => {
             this.userId = this.socket.id;
             console.log('Socket', this.socket.id, 'connected.');
@@ -500,19 +503,19 @@ class WebRTCConnectionService {
         this.socket.on('disconnect', () => {
             console.log('Socket', this.socket.id, 'disconnected.');
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_USER_CONNECTED"], (data) => {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_USER_CONNECTED"], (data) => {
             this.makeOffer(data.userId, data.username);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_USER_DISCONNECTED"], (data) => {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_USER_DISCONNECTED"], (data) => {
             this.userDisconnected(data.userId);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_CONNECTED_TO_ROOM"], (data) => {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_CONNECTED_TO_ROOM"], (data) => {
             this.webRTCClientsService.setRoomId(data.roomId, false);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_ROOM_IS_FULL"], (data) => {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_ROOM_IS_FULL"], (data) => {
             this.webRTCClientsService.setRoomId(data.roomId, true);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], (data) => {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], (data) => {
             this.handleRTCMessage(data);
         });
     }
@@ -522,18 +525,18 @@ class WebRTCConnectionService {
             const currentUser = new _models_webrtc_client_model__WEBPACK_IMPORTED_MODULE_2__["WebRTCClient"](this.socket.id, userName, this.mediaStream);
             this.webRTCClientsService.addClient(currentUser);
             if (!room) {
-                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_INIT"], { userId: currentUser.id });
+                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_INIT"], { userId: currentUser.id });
             }
             else {
                 console.log(room);
-                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_INIT"], { userId: currentUser.id, room: room, username: userName });
+                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_INIT"], { userId: currentUser.id, room: room, username: userName });
             }
         }).catch(e => {
             console.error('Couln\'t get mediaStream', e);
         });
     }
     disconnect() {
-        this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_DISCONNECT"], { userId: this.userId });
+        this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_DISCONNECT"], { userId: this.userId });
         this.mediaStream.getTracks().forEach((track) => {
             track.stop();
         });
@@ -549,11 +552,11 @@ class WebRTCConnectionService {
         };
         userConnection.createOffer({ offerToReceiveAudio: true, offerToReceiveVideo: true }).then((session) => {
             return userConnection.setLocalDescription(session).then(() => {
-                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+                this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
                     from: this.userId,
                     dest: userId,
                     session: session,
-                    type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_OFFER"],
+                    type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_OFFER"],
                     username: this.webRTCClientsService.getUserName(this.userId)
                 });
             });
@@ -566,11 +569,11 @@ class WebRTCConnectionService {
         const userConnection = new RTCPeerConnection();
         this.userConnections[userId] = userConnection;
         userConnection.onicecandidate = (event) => {
-            this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+            this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
                 from: this.userId,
                 dest: userId,
                 ice: event.candidate,
-                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ICE"]
+                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ICE"]
             });
         };
         userConnection.onnegotiationneeded = () => {
@@ -595,22 +598,22 @@ class WebRTCConnectionService {
     handleRTCMessage(message) {
         const userConnection = this.getUserConnection(message.from, message.username);
         switch (message.type) {
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ICE"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ICE"]:
                 if (message.ice) {
                     console.log('Adding ice candidate');
                     userConnection.addIceCandidate(message.ice);
                 }
                 break;
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_OFFER"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_OFFER"]:
                 userConnection.setRemoteDescription(new RTCSessionDescription(message.session)).then(() => {
                     console.log('Setting remote session');
                     return userConnection.createAnswer().then((session) => {
                         return userConnection.setLocalDescription(session).then(() => {
-                            this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+                            this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
                                 from: this.userId,
                                 dest: message.from,
                                 session: session,
-                                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ANSWER"],
+                                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ANSWER"],
                                 username: this.webRTCClientsService.getUserName(this.userId)
                             });
                         });
@@ -619,7 +622,7 @@ class WebRTCConnectionService {
                     console.error('Error on SDP-Offer:', e);
                 });
                 break;
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ANSWER"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ANSWER"]:
                 userConnection.setRemoteDescription(new RTCSessionDescription(message.session)).then(() => {
                     console.log('Setting remote session');
                 }).catch(e => console.error('Error on answer:', e));
@@ -630,11 +633,11 @@ class WebRTCConnectionService {
         this.webRTCClientsService.removeClient(userId);
     }
 }
-WebRTCConnectionService.ɵfac = function WebRTCConnectionService_Factory(t) { return new (t || WebRTCConnectionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__["WebRTCClientService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_mediastream_service__WEBPACK_IMPORTED_MODULE_5__["MediaStreamService"])); };
+WebRTCConnectionService.ɵfac = function WebRTCConnectionService_Factory(t) { return new (t || WebRTCConnectionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__["WebRTCClientService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_mediastream_service__WEBPACK_IMPORTED_MODULE_6__["MediaStreamService"])); };
 WebRTCConnectionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: WebRTCConnectionService, factory: WebRTCConnectionService.ɵfac });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](WebRTCConnectionService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__["WebRTCClientService"] }, { type: _mediastream_service__WEBPACK_IMPORTED_MODULE_5__["MediaStreamService"] }]; }, null); })();
+    }], function () { return [{ type: _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__["WebRTCClientService"] }, { type: _mediastream_service__WEBPACK_IMPORTED_MODULE_6__["MediaStreamService"] }]; }, null); })();
 
 
 /***/ }),
@@ -745,7 +748,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    ServiceLink: 'http://localhost:3000/'
+    ServiceLink: 'http://localhost:8080'
 };
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  ServiceLink: 'https://uvid-backend-rehuo10.herokuapp.com/'
+  ServiceLink: 'https://uvid-rehuo10.herokuapp.com/'
 };

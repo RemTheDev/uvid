@@ -642,6 +642,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.webRTCConnectionService.disconnect();
           this.isConnected = false;
           this.webRTCClientService.setRoomId(undefined, false);
+          this.router.navigate(['room-connection', '']);
           location.reload();
         }
       }, {
@@ -915,19 +916,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../webrtc/webrtc-event-messages */
     "./src/app/webrtc/webrtc-event-messages.ts");
     /* harmony import */
 
 
-    var _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./webrtc-clients.service */
     "./src/app/services/webrtc-clients.service.ts");
     /* harmony import */
 
 
-    var _mediastream_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _mediastream_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./mediastream.service */
     "./src/app/services/mediastream.service.ts");
 
@@ -943,7 +950,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.mediaStreamService = mediaStreamService;
         this.userConnections = [];
         this.mediaStream = undefined;
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"]('http://localhost:3000/');
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__["connect"](_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].ServiceLink);
         this.socket.on('connect', function () {
           _this2.userId = _this2.socket.id;
           console.log('Socket', _this2.socket.id, 'connected.');
@@ -951,19 +958,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.socket.on('disconnect', function () {
           console.log('Socket', _this2.socket.id, 'disconnected.');
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_USER_CONNECTED"], function (data) {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_USER_CONNECTED"], function (data) {
           _this2.makeOffer(data.userId, data.username);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_USER_DISCONNECTED"], function (data) {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_USER_DISCONNECTED"], function (data) {
           _this2.userDisconnected(data.userId);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_CONNECTED_TO_ROOM"], function (data) {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_CONNECTED_TO_ROOM"], function (data) {
           _this2.webRTCClientsService.setRoomId(data.roomId, false);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_ROOM_IS_FULL"], function (data) {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_ROOM_IS_FULL"], function (data) {
           _this2.webRTCClientsService.setRoomId(data.roomId, true);
         });
-        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], function (data) {
+        this.socket.on(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], function (data) {
           _this2.handleRTCMessage(data);
         });
       }
@@ -980,13 +987,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this3.webRTCClientsService.addClient(currentUser);
 
             if (!room) {
-              _this3.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_INIT"], {
+              _this3.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_INIT"], {
                 userId: currentUser.id
               });
             } else {
               console.log(room);
 
-              _this3.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_INIT"], {
+              _this3.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_INIT"], {
                 userId: currentUser.id,
                 room: room,
                 username: userName
@@ -999,7 +1006,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "disconnect",
         value: function disconnect() {
-          this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_DISCONNECT"], {
+          this.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_DISCONNECT"], {
             userId: this.userId
           });
           this.mediaStream.getTracks().forEach(function (track) {
@@ -1024,11 +1031,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             offerToReceiveVideo: true
           }).then(function (session) {
             return userConnection.setLocalDescription(session).then(function () {
-              _this4.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+              _this4.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
                 from: _this4.userId,
                 dest: userId,
                 session: session,
-                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_OFFER"],
+                type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_OFFER"],
                 username: _this4.webRTCClientsService.getUserName(_this4.userId)
               });
             });
@@ -1047,11 +1054,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.userConnections[userId] = userConnection;
 
           userConnection.onicecandidate = function (event) {
-            _this5.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+            _this5.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
               from: _this5.userId,
               dest: userId,
               ice: event.candidate,
-              type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ICE"]
+              type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ICE"]
             });
           };
 
@@ -1087,7 +1094,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var userConnection = this.getUserConnection(message.from, message.username);
 
           switch (message.type) {
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ICE"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ICE"]:
               if (message.ice) {
                 console.log('Adding ice candidate');
                 userConnection.addIceCandidate(message.ice);
@@ -1095,16 +1102,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               break;
 
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_OFFER"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_OFFER"]:
               userConnection.setRemoteDescription(new RTCSessionDescription(message.session)).then(function () {
                 console.log('Setting remote session');
                 return userConnection.createAnswer().then(function (session) {
                   return userConnection.setLocalDescription(session).then(function () {
-                    _this6.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE"], {
+                    _this6.socket.emit(_webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE"], {
                       from: _this6.userId,
                       dest: message.from,
                       session: session,
-                      type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ANSWER"],
+                      type: _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ANSWER"],
                       username: _this6.webRTCClientsService.getUserName(_this6.userId)
                     });
                   });
@@ -1114,7 +1121,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               });
               break;
 
-            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_3__["RTC_MESSAGE_TYPE_ANSWER"]:
+            case _webrtc_webrtc_event_messages__WEBPACK_IMPORTED_MODULE_4__["RTC_MESSAGE_TYPE_ANSWER"]:
               userConnection.setRemoteDescription(new RTCSessionDescription(message.session)).then(function () {
                 console.log('Setting remote session');
               })["catch"](function (e) {
@@ -1134,7 +1141,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     WebRTCConnectionService.ɵfac = function WebRTCConnectionService_Factory(t) {
-      return new (t || WebRTCConnectionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__["WebRTCClientService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_mediastream_service__WEBPACK_IMPORTED_MODULE_5__["MediaStreamService"]));
+      return new (t || WebRTCConnectionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__["WebRTCClientService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_mediastream_service__WEBPACK_IMPORTED_MODULE_6__["MediaStreamService"]));
     };
 
     WebRTCConnectionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -1148,9 +1155,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
       }], function () {
         return [{
-          type: _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_4__["WebRTCClientService"]
+          type: _webrtc_clients_service__WEBPACK_IMPORTED_MODULE_5__["WebRTCClientService"]
         }, {
-          type: _mediastream_service__WEBPACK_IMPORTED_MODULE_5__["MediaStreamService"]
+          type: _mediastream_service__WEBPACK_IMPORTED_MODULE_6__["MediaStreamService"]
         }];
       }, null);
     })();
@@ -1388,7 +1395,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      ServiceLink: 'http://localhost:3000/'
+      ServiceLink: 'http://localhost:8080'
     };
     /*
      * For easier debugging in development mode, you can import the following file
