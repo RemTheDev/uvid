@@ -1,0 +1,10 @@
+export const RTC_USER_CONNECTED = 'user_connected';
+export const RTC_USER_DISCONNECTED = 'user_disconnected';
+export const RTC_DISCONNECT = 'disconnects';
+export const RTC_INIT = 'init';
+export const RTC_CONNECTED_TO_ROOM = 'connected_to_room';
+export const RTC_ROOM_IS_FULL = 'room_is_full';
+export const RTC_MESSAGE = 'message';
+export const RTC_MESSAGE_TYPE_ICE = 'ice';
+export const RTC_MESSAGE_TYPE_OFFER = 'offer';
+export const RTC_MESSAGE_TYPE_ANSWER = 'answer';

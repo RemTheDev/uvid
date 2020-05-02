@@ -1,0 +1,21 @@
+<div class="mainContainer">
+  <mat-form-field class="txtUserName">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="your name" [(ngModel)]="userName" >
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="connect()" *ngIf="!isConnected" [disabled]="userName === ''" >Connect</button>
+  <button mat-raised-button color="primary" (click)="disconnect()" *ngIf="isConnected" >Disconnect</button>
+  <mat-card class="roomInvLink"><p>You were connected to a new room since the requested room was full.</p></mat-card>
+  <mat-card class="roomInvLink" *ngIf="roomId"><p class='roomInvLinkLabel'>Room invitation link :</p>
+    <p>{{ currentURL + roomId }}</p>
+    <button mat-raised-button color="primary" (click)="copyLink()" *ngIf="roomId" >Copy to clipboard</button></mat-card>
+
+  <div class="streamsContainer">
+    <div *ngFor="let user of usersConnected" class="userContainer" >
+      <p class="userName" >{{ user.userName }}</p>
+      <video class="videoScreen" id="{{user.id}}" [src]="setStreamSrc(user)" controls autoplay>
+      </video>
+    </div>
+  </div>
+</div>
